@@ -1,0 +1,18 @@
+label.module_name.popup = CF - Popup
+label.module.popup.show_again_after_change = Bei Änderung des Inhaltes erneut anzeigen
+
+label.module.popup.time_restriction = Zeitliche Einschränkung
+label.module.popup.time_restriction.none = keine
+label.module.popup.time_restriction.restrict = zeitlich gesteuert
+label.module.popup.start = Start Zeitpunkt
+label.module.popup.end = End Zeitpunkt
+label.module.popup.visible_on = Sichtbar auf
+label.module.popup.visible_on.everywhere = überall
+label.module.popup.visible_on.blacklist = Auf bestimmten Seiten nicht anzeigen
+label.module.popup.visible_on.whitelist = Auf bestimmten Seiten anzeigen
+label.module.popup.pages = Seiten
+label.module.popup.visibility = Anzeigen pro
+label.module.popup.visibility.always = Immer
+label.module.popup.visibility.once = Einmal pro Website Besuch
+label.module.popup.visibility.until_close = Bis das Popup einmal geschlossen wurde
+label.module.popup.show_reopen_button = Button zum Wieder öffnen des Popups anzeigen

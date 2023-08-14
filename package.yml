@@ -1,0 +1,8 @@
+package: kpopup
+author: Kreatif GmbH
+version: '0.0.1'
+
+requires:
+    php:
+        version: '>=8.1, <8.3'
+    redaxo: '>=5.14'

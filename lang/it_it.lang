@@ -1,0 +1,19 @@
+label.module_name.popup = CF - Popup
+label.module.popup.tab.visibility = Visibilitá
+label.module.popup.show_again_after_change = Mostra di nuovo se il contenuto viene modificato
+
+label.module.popup.time_restriction = Controllo a teporizzatore
+label.module.popup.time_restriction.none = nessuno
+label.module.popup.time_restriction.restrict = Imposta data inizio / fine
+label.module.popup.start = Inizio
+label.module.popup.end = Fine
+label.module.popup.visible_on = Visibile su
+label.module.popup.visible_on.everywhere = ovunque
+label.module.popup.visible_on.blacklist = Solo pagine selezionate
+label.module.popup.visible_on.whitelist = Escludi su pagine selezionate
+label.module.popup.pages = Pagine
+label.module.popup.show_per = Mostra ogni
+label.module.popup.visibility.always = Sempre
+label.module.popup.visibility.once = Una volta a visita della pagina
+label.module.popup.visibility.until_close = Fino a quando viene chiuso il popup
+label.module.popup.show_reopen_button = Mostra button per riaprire il Popup
