@@ -79,7 +79,7 @@ if (empty($_temp)) {
     $sql->insert();
     $templateId = $sql->getLastId();
 } else {
-    $templateId = $_temp['id'];
+    $templateId = $_temp[0]['id'];
 }
 $sql = rex_sql::factory();
 $sql->setWhere('id = 1');
