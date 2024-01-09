@@ -31,11 +31,11 @@ class Popup
     protected bool $isVisible;
     protected bool $hasContentChanged;
 
-    public function __construct(\rex_article_slice $slice, PopupUserInformation $data)
+    public function __construct(\rex_article_slice $slice, ?PopupUserInformation $data = null)
     {
         $this->sliceId = $slice->getId();
         $this->settings = PopupSettings::getFromSettings($slice->getValueArray(static::SETTINGS_ID));
-        $this->data = $data;
+        $this->data = $data ?? new PopupUserInformation();
 
         $this->setLastMod($slice);
         $this->setIsVisible();
@@ -93,8 +93,10 @@ class Popup
         } else {
             switch ($this->settings->getVisibility()) {
                 case 'always':
+                    $this->data->shownOnce = true;
                     return true;
                 case 'close':
+                    $this->data->shownOnce = true;
                     return !$this->data->closed;
                 case 'once':
                     if($this->data->shownOnce) {
