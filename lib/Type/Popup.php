@@ -14,6 +14,7 @@ namespace RexGraphQL\Type\Popup;
 
 
 use Exception;
+use RexGraphQL\Type\Kreatif\Extension\ArticleExtension;
 use RexGraphQL\Type\Structure\ArticleSlice;
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Type;
@@ -62,9 +63,13 @@ class Popup
      * @throws Exception
      */
     #[Field]
-    public function getSlice(): ArticleSlice
+    public function getSlice(?string $mapping = null): ArticleSlice
     {
-        return ArticleSlice::getById($this->sliceId);
+        $slice = ArticleSlice::getById($this->sliceId);
+        if($mapping) {
+            $slice = ArticleExtension::parseSlice($this->getSlice(), $mapping);
+        }
+        return $slice;
     }
 
     private function setIsVisible(): void
