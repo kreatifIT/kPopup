@@ -63,13 +63,17 @@ class Popup
      * @throws Exception
      */
     #[Field]
-    public function getSlice(?string $mapping = null): ArticleSlice
+    public function getSlice(?string $mapping = null): ?ArticleSlice
     {
-        $slice = ArticleSlice::getById($this->sliceId);
-        if($mapping) {
-            $slice = ArticleExtension::parseSlice($this->getSlice(), $mapping);
+        $slice = \rex_article_slice::getArticleSliceById($this->sliceId);
+        if($slice && $slice->isOnline()) {
+            $slice = ArticleSlice::getById($this->sliceId);
+            if($mapping) {
+                $slice = ArticleExtension::parseSlice($this->getSlice(), $mapping);
+            }
+            return $slice;
         }
-        return $slice;
+        return null;
     }
 
     private function setIsVisible(): void
