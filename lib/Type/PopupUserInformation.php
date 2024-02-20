@@ -4,9 +4,11 @@ namespace RexGraphQL\Type\Popup;
 
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Input;
+use TheCodingMachine\GraphQLite\Annotations\Type;
 use TheCodingMachine\GraphQLite\Types\ID;
 
 #[Input]
+#[Type]
 class PopupUserInformation
 {
     #[Field]
