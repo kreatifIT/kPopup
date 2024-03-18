@@ -24,7 +24,7 @@ class PopupUserInformation
 
     public function getCurrentArticleId(): int
     {
-        return $this->currentArticleId?->val() || \rex_article::getCurrentId();
+        return $this->currentArticleId?->val() ?: \rex_article::getCurrentId();
     }
 
     public function setCurrentArticleId(?ID $id): void
