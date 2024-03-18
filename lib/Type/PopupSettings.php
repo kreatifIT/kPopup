@@ -56,14 +56,14 @@ class PopupSettings
     public static function getFromSettings(array $settings): self
     {
         $_settings = new self();
-        $_settings->showOnChange = $settings['show_on_change'] != null;
-        $_settings->timeRestricted = $settings['time'] === 'timer';
+        $_settings->showOnChange = !isset($settings['show_on_change']) || $settings['show_on_change'] != null;
+        $_settings->timeRestricted = isset($settings['time']) && $settings['time'] === 'timer';
         $_settings->startDate = $_settings->isTimeRestricted() ? new \DateTime($settings['start_date']) : null;
         $_settings->endDate = $_settings->isTimeRestricted() ? new \DateTime($settings['end_date']) : null;
-        $_settings->articleLimitation = $settings['article_limitation'];
-        $_settings->articleList = explode(',', $settings['article_list']);
-        $_settings->visibility = $settings['visibility'];
-        $_settings->showReopenButton = $settings['show_reopen_button'] != null;
+        $_settings->articleLimitation = $settings['article_limitation'] ?? '';
+        $_settings->articleList = explode(',', $settings['article_list'] ?? '');
+        $_settings->visibility = $settings['visibility'] ?? '';
+        $_settings->showReopenButton = !isset($settings['show_reopen_button']) || $settings['show_reopen_button'] != null;
         return $_settings;
     }
 
