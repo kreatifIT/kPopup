@@ -16,7 +16,7 @@ class PopupUserInformation
     #[Field]
     public ?bool $shownOnce = false;
     #[Field]
-    private ?ID $currentArticleId;
+    private ?ID $currentArticleId = null;
 
     #[Field]
     public ?int $lastModified = 0;
